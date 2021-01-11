@@ -17245,6 +17245,17 @@ header .navbar {
           justify-content: space-between;
 }
 
+header .navbar.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: rgba(71, 48, 36, 0.4);
+  width: 100%;
+  padding: 20px 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 header .navbar a {
   color: #ffffff;
   text-decoration: none;

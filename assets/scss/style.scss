@@ -21,6 +21,16 @@ header {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/assets/img/header-bg2.jpg") no-repeat center top;
     background-size: cover;
     .navbar {
+        &.fixed {
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background: rgba(#473024, 0.4);
+            width: 100%;
+            padding: 20px 0;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
         color: #ffffff;
         display: flex;
         align-items: center;

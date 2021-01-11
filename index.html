@@ -9,17 +9,17 @@
 </head>
 
 <body>
-    <header>
+    <header id="home">
         <!-- Nav -->
-        <div class="container">
-            <nav class="navbar">
+        <nav class="navbar">
+            <div class="container">
                 <a href="/" class="_logo">
                     <img src="/assets/img/logo.png" alt="" />
                     <span>Waxom</span>
                 </a>
                 <div class="_nav">
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="#home">Home</a></li>
                         <li><a href="#services">About Us</a></li>
                         <li>
                             <a href="#ads_yourself">Portfolio</a>
@@ -47,8 +47,8 @@
                         </li>
                     </ul>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
         <!-- Carousel -->
         <div class="carousel">
             <div class="owl-carousel owl-theme" id="owl-header">
@@ -530,6 +530,34 @@
             nav: true,
             items: 3,
             lazyLoad: true,
+        });
+        $(document).ready(function() {
+            $("a").on("click", function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $("html, body").animate({
+                            scrollTop: $(hash).offset().top - 95 + "px",
+                        },
+                        800,
+                        function() {
+                            window.location.hash = hash;
+                        }
+                    );
+                }
+            });
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 150) {
+                    $(".navbar").addClass("fixed");
+                } else {
+                    $(".navbar").removeClass("fixed");
+                }
+            });
+            if ($(window).scrollTop() > 150) {
+                $(".navbar").addClass("fixed");
+            } else {
+                $(".navbar").removeClass("fixed");
+            }
         });
     </script>
 </body>
