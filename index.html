@@ -229,64 +229,85 @@
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4 item">
                             <img src="/assets/img/projects/mobile.jpg" alt="" />
-                            <h4>Lorem, ipsum dolor.</h4>
-                            <small>Category, Cat</small>
+                            <div class="bottom">
+                                <h4>Lorem, ipsum dolor.</h4>
+                                <small>Category, Cat</small>
+                            </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 item">
                             <img src="/assets/img/projects/hovered.jpg" alt="" />
-                            <h4>Lorem, ipsum dolor.</h4>
-                            <small>Category, Cat</small>
+                            <div class="bottom">
+                                <h4>Lorem, ipsum dolor.</h4>
+                                <small>Category, Cat</small>
+                            </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 item">
                             <img src="/assets/img/projects/3th.jpg" alt="" />
-                            <h4>Lorem, ipsum dolor.</h4>
-                            <small>Category, Cat</small>
+                            <div class="bottom">
+                                <h4>Lorem, ipsum dolor.</h4>
+                                <small>Category, Cat</small>
+                            </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 item">
                             <img src="/assets/img/projects/waterfall.jpg" alt="" />
-                            <h4>Lorem, ipsum dolor.</h4>
-                            <small>Category, Cat</small>
+                            <div class="bottom">
+                                <h4>Lorem, ipsum dolor.</h4>
+                                <small>Category, Cat</small>
+                            </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 item">
                             <img src="/assets/img/projects/book.jpg" alt="" />
-                            <h4>Lorem, ipsum dolor.</h4>
-                            <small>Category, Cat</small>
+                            <div class="bottom">
+                                <h4>Lorem, ipsum dolor.</h4>
+                                <small>Category, Cat</small>
+                            </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 item">
                             <img src="/assets/img/projects/soteinocean.jpg" alt="" />
-                            <h4>Lorem, ipsum dolor.</h4>
-                            <small>Category, Cat</small>
+                            <div class="bottom">
+                                <h4>Lorem, ipsum dolor.</h4>
+                                <small>Category, Cat</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="load_more_btn">Load more</div>
+                <a href="#" class="load_more_btn">Load more</a>
             </div>
         </section>
         <!-- Video -->
         <section class="video" id="video">
-            <img src="/assets/img/icon-play.png" alt="" />
+            <a href="#"><img src="/assets/img/icon-play.png" alt="" /></a>
             <h4>Waxom Video Presentation</h4>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste architecto qui esse ipsam ullam sed suscipit, asperiores natus doloremque quisquam.
             </p>
-            <div class="time">3:43</div>
+            <div class="time">03:26</div>
         </section>
         <!-- Mobile -->
         <section class="mobile" id="mobile">
-            <div class="col-md-6 text-right col-12">
-                <h4>Excellent for Mobile Devices.</h4>
-                <p>
-                    Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur
-                    parum clari, fiant sollemnes in futurum.
-                </p>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur.</li>
-                    <li>Lorem ipsum dolor sit amet conseit amet consectetur.</li>
-                    <li>
-                        Lorem ipsumit amet conse dolor sit amet consit amet conseectetur.
-                    </li>
-                    <li>Lorem ipsu amet consectetur.</li>
-                </ul>
+            <div class="container">
+                <img src="/assets/img/iPhone_hand.png" alt="" />
+                <div class="right">
+                    <h4>Excellent for Mobile Devices.</h4>
+                    <p>
+                        Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur
+                        parum clari, fiant sollemnes in futurum.
+                    </p>
+                    <ul>
+                        <li>
+                            <img src="/assets/img/circle-arrow.png" alt="" /> Lorem ipsum dolor sit amet consectetur.
+                        </li>
+                        <li>
+                            <img src="/assets/img/circle-arrow.png" alt="" /> Lorem ipsum dolor sit amet conseit amet consectetur.
+                        </li>
+                        <li>
+                            <img src="/assets/img/circle-arrow.png" alt="" /> Lorem ipsumit amet conse dolor sit amet consit amet conseectetur.
+                        </li>
+                        <li>
+                            <img src="/assets/img/circle-arrow.png" alt="" /> Lorem ipsu amet consectetur.
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
         <!-- Counter -->
@@ -537,7 +558,8 @@
                     event.preventDefault();
                     var hash = this.hash;
                     $("html, body").animate({
-                            scrollTop: $(hash).offset().top - 95 + "px",
+                            // scrollTop: $(hash).offset().top - 95 + "px",
+                            scrollTop: $(hash).offset().top,
                         },
                         800,
                         function() {
@@ -546,18 +568,19 @@
                     );
                 }
             });
-            $(window).scroll(function() {
-                if ($(window).scrollTop() > 150) {
-                    $(".navbar").addClass("fixed");
+
+            window.onscroll = function(e) {
+                if (this.oldScroll > this.scrollY) {
+                    if ($(window).scrollTop() > 150) {
+                        $(".navbar").addClass("fixed");
+                    } else {
+                        $(".navbar").removeClass("fixed");
+                    }
                 } else {
                     $(".navbar").removeClass("fixed");
                 }
-            });
-            if ($(window).scrollTop() > 150) {
-                $(".navbar").addClass("fixed");
-            } else {
-                $(".navbar").removeClass("fixed");
-            }
+                this.oldScroll = this.scrollY;
+            };
         });
     </script>
 </body>
