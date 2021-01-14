@@ -1,7 +1,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 @import "../../node_modules/owl.carousel/src/scss/owl.theme.default.scss";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import url("/assets/fonts/montserrat/montserrat.css");
 @import url("/assets/fonts/raleway/raleway.css");
 body {
@@ -18,7 +18,7 @@ a {
 header {
     padding: 5vh 0;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/assets/img/header-bg2.jpg") no-repeat center top;
+    background: linear-gradient(rgba(#000, 0.7), rgba(#000, 0.7)), url("/assets/img/header-bg2.jpg") no-repeat center top;
     background-size: cover;
     .navbar {
         transition: all 0.6s linear;
